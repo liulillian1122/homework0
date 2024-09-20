@@ -1,20 +1,33 @@
-<button class="button-6" role="button" onClick = "show()">執行</button>
+<button class="button-6" role="button" onClick = "show1()">更換背景顏色</button>
+<br><br>
+<button class="button-6" role="button" onClick = "show2()">來一點心情小語</button>
 <div id = "text"></div>
 
 <!–--------- JS TODO: 請修改為更改背景顏色 –--------->
 <script>
-    let msg = ["8E9BAE", "DFBFB2", "#7D6252", "EAE0DC"];
-    let i = 0;
+    let msg1 = ["8E9BAE", "DFBFB2", "#7D6252", "EAE0DC"];
+	let msg2 = ["今天天氣晴","我想吃蛋餅","今日宜翹課"];
+    let i = 0, j=0;
     
-    function show()
+    function show1()
     {
-    	document.body.style.backgroundColor = msg[i%4];
+    	document.body.style.backgroundColor = msg1[i%3];
     	++i;
+    }
+	function show2()
+    {
+    	document.getElementById("text").innerHTML = msg2[j%3];
+    	++j;
     }
 </script>
 
 <!–--------- CSS TODO: 請套用一種想要的按鈕(button)樣式 –--------->
 <style>
+	div{
+		font-weight: 1000;
+		font-size:20px;
+		padding: solid white ; /*上下50px 左右10px*/
+	}
 /* CSS */
 .button-6 {
   align-items: center;
