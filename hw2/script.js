@@ -7,9 +7,17 @@ let canmove=0;
 
 let but=1;
 function eraser(){
+	const elem1 = document.getElementById("but1");
+	const elem2 = document.getElementById("but2");
+	elem1.style.backgroundColor = "#79FF79";
+	elem2.style.backgroundColor = "#eee";
 	but=0;
 }
 function pen(){
+	const elem1 = document.getElementById("but1");
+	const elem2 = document.getElementById("but2");
+	elem1.style.backgroundColor = "#eee";
+	elem2.style.backgroundColor = "#79FF79";
 	but=1;
 }
 function drawBall() 
