@@ -5,6 +5,13 @@ let x = 0, y = 0, dx = 50, dy = 50, r = 15, color ="#0095DD";
 let canmove=0;
 // 畫圓形
 
+let but=1;
+function eraser(){
+	but=0;
+}
+function pen(){
+	but=1;
+}
 function drawBall() 
 {
 	ctx.beginPath();
@@ -28,9 +35,11 @@ function keyDownHandler(e)
 document.addEventListener("mousemove", mousemove);
 function mousemove(e) {
 	if(canmove){
-		ctx.fillStyle = color;
+		if(but)ctx.fillStyle = color;
+		else ctx.fillStyle = "#eee";
 		x=e.clientX-canvas.offsetLeft;
 		y=e.clientY-canvas.offsetTop;
+		
 	}
 }
 document.addEventListener("mousedown", mousedown);
